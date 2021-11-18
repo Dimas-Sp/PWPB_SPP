@@ -36,13 +36,13 @@
         </a>
       </li>
 	  <li class="nav-item">
-        <a class="nav-link" href="ui-colors.html">
+        <a class="nav-link" href="<?php echo base_url('index.php/admin/petugas');?>">
           <i class="fas fa-fw fa-user"></i>
           <span>Petugas</span>
         </a>
       </li>
 	  <li class="nav-item">
-        <a class="nav-link" href="ui-colors.html">
+        <a class="nav-link" href="<?php echo base_url('index.php/admin/pembayaran');?>">
           <i class="fas fa-fw fa-dollar-sign "></i>
           <span>Transaksi Pembayaran</span>
         </a>
