@@ -51,7 +51,6 @@ class Kelas extends CI_Controller
     public function edit($id = null)
     {
         if (!isset($id)) redirect('admin/kelas');
-       
         $kelas = $this->kelas_model;
         $validation = $this->form_validation;
         $validation->set_rules($kelas->rules());

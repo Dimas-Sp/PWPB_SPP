@@ -40,7 +40,7 @@
                             <table>
                                 <tr>
                                     <td width="150"><a href="<?php echo site_url('admin/kelas/add') ?>"><i class="fas fa-plus"></i> Tambah Data </a></td>
-                                    <td> <a href="<?php echo site_url('admin/kelas/cetak') ?>"><i  class="fas fa-print"></i> Cetak PDF</a></td>
+                                    
                                 </tr>
                             </table>
                             
@@ -65,7 +65,7 @@
                                             <?php echo $ikelas->nama_kelas ?>
                                         </td>
                                         <td>
-                                            <?php echo ($ikelas->id_kk) ?>
+                                            <?php echo ($ikelas->nama_kk) ?>
                                         </td>
                                         <td width="250">
                                             <a href="<?php echo site_url('admin/kelas/edit/'.$ikelas->id_kelas) ?>"

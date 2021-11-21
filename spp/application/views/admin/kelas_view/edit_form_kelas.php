@@ -55,11 +55,20 @@
                                     <?php echo form_error('nama_kelas') ?>
                                 </div>
                             </div>
-
+                            
                             <div class="form-group">
-                                <label for="id_kk">Kompetensi Keahlian*</label>
-                                <input class="form-control <?php echo form_error('id_kk') ? 'is-invalid':'' ?>"
-                                 type="number" name="id_kk" min="0" placeholder="id_kk" value="<?php echo $kelas->id_kk ?>" />
+                                <label for="id_kk">Pilih Kompetensi Keahlian*</label>
+                                
+                                <select class ="form-control" <?php echo form_error('id_kk') ? 'is-invalid':'' ?>
+                                name="id_kk" id="id_kk">
+                                
+                                    <option value><?=$_SESSION['nama_kk']?></option>
+                                    <option value="<?php echo $kelas->id_kk=1 ?>">REKAYASA PERANGKAT LUNAK</option>
+                                    <option value="<?php echo $kelas->id_kk=2 ?>">TEKNIK KOMPUTER JARINGAN</option>
+                                    <option value="<?php echo $kelas->id_kk=3 ?>">TEKNIK KENDARAAN RINGAN</option>
+                                    <option value="<?php echo $kelas->id_kk=4 ?>">TEKNIK FABRIKASI LOGAM</option>
+                                    
+                                </select>
                                 <div class="invalid-feedback">
                                     <?php echo form_error('id_kk') ?>
                                 </div>

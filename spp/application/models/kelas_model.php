@@ -25,12 +25,17 @@ class Kelas_model extends CI_Model
 
     public function getAll()
     {
-        return $this->db->get($this->_table)->result();
+        $this->db->select("kelas.*, kompetensi_keahlian.id_kk, kompetensi_keahlian.nama_kk ");
+        $this->db->from("kelas");
+        $this->db->join("kompetensi_keahlian", "kelas.id_kk = kompetensi_keahlian.id_kk", "inner");
+        $query = $this->db->get();
+        return $query->result();
     }
     
     public function getById($id)
     {
         return $this->db->get_where($this->_table, ["id_kelas" => $id])->row();
+        
     }
 
     public function save()

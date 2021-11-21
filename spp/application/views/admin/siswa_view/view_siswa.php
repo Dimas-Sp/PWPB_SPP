@@ -40,7 +40,7 @@
                             <table>
                                 <tr>
                                     <td width="150"><a href="<?php echo site_url('admin/siswa/add') ?>"><i class="fas fa-plus"></i> Tambah Data </a></td>
-                                    <td> <a href="<?php echo site_url('admin/siswa/cetak') ?>"><i  class="fas fa-print"></i> Cetak PDF</a></td>
+                                    
                                 </tr>
                             </table>
                             

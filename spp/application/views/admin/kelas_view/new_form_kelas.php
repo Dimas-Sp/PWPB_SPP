@@ -50,9 +50,15 @@
                                     </div>
                                 </div>
                                 <div class="form-group">
-                                    <label for="id_kk">Kompetensi Keahlian*</label>
-                                    <input class="form-control <?php echo form_error('id_kk') ? 'is-invalid':'' ?>"
-                                     type="number" name="id_kk" min="0" placeholder="id_kk" />
+                                <label for="id_kk">Pilih Kelas...</label>
+                                
+                                    <select class ="form-control" <?php echo form_error('id_kk') ? 'is-invalid':'' ?> name="id_kk" id="id_kk">
+                                        <option value="">Pilih Kelas...</option>
+                                        <option value="1">REKAYASA PERANGKAT LUNAK</option>
+                                        <option value="2">TEKNIK KOMPUTER JARINGAN</option>
+                                        <option value="3">TEKNIK KENDARAAN RINGAN</option>
+                                        <option value="4">TEKNIK FABRIKASI LOGAM</option>
+                                    </select>
                                     <div class="invalid-feedback">
                                         <?php echo form_error('id_kk') ?>
                                     </div>
