@@ -14,10 +14,6 @@ class Kelas_model extends CI_Model
             ['field' => 'nama_kelas',
             'label' => 'Nama_kelas',
             'rules' => 'required'],
-
-            ['field' => 'id_kk',
-            'label' => 'Id_kk',
-            'rules' => 'numeric'],
             
         ];
     }
@@ -25,10 +21,10 @@ class Kelas_model extends CI_Model
 
     public function getAll()
     {
-        $this->db->select("kelas.*, kompetensi_keahlian.id_kk, kompetensi_keahlian.nama_kk ");
-        $this->db->from("kelas");
-        $this->db->join("kompetensi_keahlian", "kelas.id_kk = kompetensi_keahlian.id_kk", "inner");
-        $query = $this->db->get();
+        $this->db->select('kelas.id_kelas, kelas.nama_kelas, kompetensi_keahlian.nama_kk');
+        $this->db->from('kelas');
+        $this->db->join('kompetensi_keahlian','kelas.id_kk=kompetensi_keahlian.id_kk');
+        $query=$this->db->get();
         return $query->result();
     }
     
@@ -36,6 +32,12 @@ class Kelas_model extends CI_Model
     {
         return $this->db->get_where($this->_table, ["id_kelas" => $id])->row();
         
+    }
+
+    public function getKelas()
+    {
+        $query = $this->db->get('kelas');
+        return $query;
     }
 
     public function save()

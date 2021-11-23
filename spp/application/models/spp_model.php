@@ -16,7 +16,7 @@ class Spp_model extends CI_Model
             'rules' => 'required'],
 
             ['field' => 'nominal',
-            'label' => 'nominal',
+            'label' => 'Nominal',
             'rules' => 'numeric'],
             
         ];

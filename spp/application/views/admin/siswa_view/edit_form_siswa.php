@@ -64,12 +64,14 @@
                                 </div>
                             </div>
                             <div class="form-group">
-                                <label for="id_kelas">ID Kelas*</label>
-                                <input class="form-control <?php echo form_error('id_kelas') ? 'is-invalid':'' ?>"
-                                 type="number" name="id_kelas" min="0" placeholder="id_kelas" value="<?php echo $siswa->id_kelas ?>" />
-                                <div class="invalid-feedback">
-                                    <?php echo form_error('id_kelas') ?>
-                                </div>
+                                    <label for="spp">Pilih Kelas*</label>
+                                    <select class="form-control" name="id_kelas" id="id_kelas" required>
+                                       <option value="">Pilih Kelas</option>
+                                            <?php foreach ($id_kelas as $row) { ?>
+                                        <option <?php if($row->id_kelas ==$siswa->id_kelas){ echo 'selected="selected"'; } ?> 
+                                            value="<?php echo $row->id_kelas ?>"><?php echo $row->nama_kelas?> </option>
+                                            <?php } ?>
+                                    </select>
                             </div>
                             <div class="form-group">
                                 <label for="alamat">Alamat*</label>
@@ -96,12 +98,14 @@
                                 </div>
                             </div>
                             <div class="form-group">
-                                <label for="id_spp">ID Spp*</label>
-                                <input class="form-control <?php echo form_error('id_spp') ? 'is-invalid':'' ?>"
-                                 type="number" name="id_spp" min="0" placeholder="id_spp" value="<?php echo $siswa->id_spp ?>" />
-                                <div class="invalid-feedback">
-                                    <?php echo form_error('id_spp') ?>
-                                </div>
+                                    <label for="spp">Pilih Tahun SPP*</label>
+                                    <select class="form-control" name="id_spp" id="id_spp" required>
+                                        <option value="">Pilih Tahun SPP</option>
+                                            <?php foreach ($id_spp as $row) { ?>
+                                        <option <?php if($row->id_spp ==$siswa->id_spp){ echo 'selected="selected"'; } ?> 
+                                            value="<?php echo $row->id_spp ?>"><?php echo $row->tahun?> </option>
+                                            <?php } ?>
+                                    </select>
                             </div>
                             <input class="btn btn-success" type="submit" name="btn" value="Save" />
                             </form>

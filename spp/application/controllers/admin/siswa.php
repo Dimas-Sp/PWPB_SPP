@@ -7,49 +7,51 @@ class Siswa extends CI_Controller
     public function __construct()
     {
         parent::__construct();
-        $this->load->model("siswa_model");
+        $this->load->model(['siswa_model', 'kelas_model', 'spp_model']);
         $this->load->library('form_validation');
         // $this->load->helper('rupiah_helper');
     }
 
     public function index()
     {   
-        if($this->session->userdata('akses') =='admin' || $this->session->userdata('akses')=='petugas'){
+        // if($this->session->userdata('akses') =='admin' || $this->session->userdata('akses')=='petugas'){
             $data["siswa"] = $this->siswa_model->getAll();
             $this->load->view("admin/siswa_view/view_siswa", $data);
-        }   
-        else
-        {
-            echo "Anda tidak berhak mengakses halaman ini";
-        }
+        // }   
+        // else
+        // {
+        //     echo "Anda tidak berhak mengakses halaman ini";
+        // }
            
     }
 
     public function add()
     {   
-        if($this->session->userdata('akses')=='admin' || $this->session->userdata('akses')=='petugas'){
-            
+        // if($this->session->userdata('akses')=='admin' || $this->session->userdata('akses')=='petugas'){
+            $data['id_kelas'] = $this->kelas_model->getKelas()->result();
+            $data['id_spp'] = $this->spp_model->getAll();
             $siswa = $this->siswa_model;
             $validation = $this->form_validation;
             $validation->set_rules($siswa->rules());
 
-            if($validation->run()){
+            if ($validation->run()) {
                 $siswa->save();
                 $this->session->set_flashdata('success', 'Berhasil disimpan');
             }
-            
-            
 
-            $this->load->view("admin/siswa_view/new_form_siswa");
-        }   
-        else
-        {
-            echo "Anda tidak berhak mengakses halaman ini";
-        }
+            $this->load->view("admin/siswa_view/new_form_siswa",$data);
+        // }   
+        // else
+        // {
+        //     echo "Anda tidak berhak mengakses halaman ini";
+        // }
     }
 
     public function edit($id = null)
     {
+        $data['id_kelas'] = $this->kelas_model->getkelas()->result();
+        $data['id_spp'] = $this->spp_model->getAll();
+        
         if (!isset($id)) redirect('admin/siswa');
        
         $siswa = $this->siswa_model;

@@ -40,6 +40,18 @@ class Siswa_model extends CI_Model
 
     public function getAll()
     {
+        // return $this->db->get($this->_table)->result();
+
+        $this->db->select('siswa.nisn,siswa.nis,siswa.nama,kelas.nama_kelas,siswa.alamat,siswa.id_telp,spp.tahun');
+        $this->db->from('siswa');
+        $this->db->join('kelas','siswa.id_kelas=kelas.id_kelas');
+        $this->db->join('spp','siswa.id_spp=spp.id_spp');
+        $query=$this->db->get();
+        return $query->result();
+    }
+
+    public function getSiswa()
+    {
         return $this->db->get($this->_table)->result();
     }
     

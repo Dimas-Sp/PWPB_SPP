@@ -56,11 +56,11 @@
                                         <th>Nisn</th>
                                         <th>Nis</th>
                                         <th>Nama</th>
-                                        <th>id_kelas</th>
+                                        <th>Kelas</th>
                                         <th>Alamat</th>
                                         <th>No Telepon</th>
-                                        <th>ID Login</th>
-                                        <th>ID Spp</th>
+                                        
+                                        <th>Tahun Ajaran</th>
                                         <th>Tools</th>
                                     </tr>
                                 </thead>
@@ -77,7 +77,7 @@
                                             <?php echo ($isiswa->nama) ?>
                                         </td>
                                         <td>
-                                            <?php echo ($isiswa->id_kelas) ?>
+                                            <?php echo ($isiswa->nama_kelas) ?>
                                         </td>
                                         <td>
                                             <?php echo ($isiswa->alamat) ?>
@@ -85,11 +85,9 @@
                                         <td>
                                             <?php echo ($isiswa->id_telp) ?>
                                         </td>
+                                        
                                         <td>
-                                            <?php echo ($isiswa->id_login) ?>
-                                        </td>
-                                        <td>
-                                            <?php echo ($isiswa->id_spp) ?>
+                                            <?php echo ($isiswa->tahun) ?>
                                         </td>
                                         <td width="250">
                                             <a href="<?php echo site_url('admin/siswa/edit/'.$isiswa->nisn) ?>"

@@ -7,14 +7,15 @@ class Kelas extends CI_Controller
     public function __construct()
     {
         parent::__construct();
-        $this->load->model("kelas_model");
+        $this->load->model(['kelas_model', 'kompetensi_keahlian_model']);
         $this->load->library('form_validation');
         // $this->load->helper('rupiah_helper');
     }
 
     public function index()
     {   
-        if($this->session->userdata('akses') =='admin' || $this->session->userdata('akses')=='petugas'){
+        if($this->session->userdata('akses') =='admin' || 
+           $this->session->userdata('akses')=='petugas'){
             $data["kelas"] = $this->kelas_model->getAll();
             $this->load->view("admin/kelas_view/view_kelas", $data);
         }   
@@ -50,7 +51,8 @@ class Kelas extends CI_Controller
 
     public function edit($id = null)
     {
-        if (!isset($id)) redirect('admin/kelas');
+        $data['id_kk'] = $this->kompetensi_keahlian_model->getAll();
+        if(!isset($id)) redirect('admin/kelas');
         $kelas = $this->kelas_model;
         $validation = $this->form_validation;
         $validation->set_rules($kelas->rules());
