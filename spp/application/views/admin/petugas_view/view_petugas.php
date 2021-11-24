@@ -53,27 +53,23 @@
                             <table class="table table-hover" id="dataTable" width="100%" cellspacing="0">
                                 <thead>
                                     <tr>
-                                        <th>ID_Petugas</th>
-                                        <th>Nama_Petugas</th>
-                                        <th>ID Login</th>
-                                        <th>Image</th>
+                                        <th>Nama&nbsp;Petugas</th>
+                                        <th>Gambar</th>
                                         <th>Tools</th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                     <?php foreach ($petugas as $ipetugas): ?>
                                     <tr>
+                                        
+                                            
                                         <td width="150">
-                                            <?php echo $ipetugas->id_petugas ?>
-                                        </td>
-                                        <td>
                                             <?php echo ($ipetugas->nama_petugas) ?>
                                         </td>
+                                        
                                         <td>
-                                            <?php echo ($ipetugas->id_login) ?>
-                                        </td>
-                                        <td>
-                                            <?php echo ($ipetugas->image) ?>
+                                            <img src="<?php echo base_url().'/uploads/'.$ipetugas->image ?>" width="55" alt="...">
+                                            <!-- ($ipetugas->image) -->
                                         </td>
                                         <td width="250">
                                             <a href="<?php echo site_url('admin/petugas/edit/'.$ipetugas->id_petugas) ?>"

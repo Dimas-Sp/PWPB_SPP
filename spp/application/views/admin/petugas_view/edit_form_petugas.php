@@ -56,9 +56,9 @@
                                 </div>
                             </div>
                             <div class="form-group">
-                                <label for="id_login">ID Login*</label>
+                                
                                 <input class="form-control <?php echo form_error('id_login') ? 'is-invalid':'' ?>"
-                                 type="text" name="id_login" min="0" value="<?php echo $petugas->id_login ?>" />
+                                 type="hidden" name="id_login" min="0" value="<?php echo $petugas->id_login ?>" />
                                 <div class="invalid-feedback">
                                     <?php echo form_error('id_login') ?>
                                 </div>

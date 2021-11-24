@@ -13,7 +13,7 @@
                 </div>
                 <div class="modal-footer">
                   <button type="button" class="btn btn-outline-primary" data-dismiss="modal">Cancel</button>
-                  <a href="http://localhost/spp/" class="btn btn-primary">Logout</a>
+                  <a href="http://localhost/Dimas-Sp/spp/" class="btn btn-primary">Logout</a>
                 </div>
               </div>
             </div>

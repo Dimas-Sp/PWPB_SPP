@@ -66,9 +66,9 @@
                                     </div>
                                 </div>
                                 <div class="form-group">
-                                    <label for="image">Image*</label>
+                                    <label for="image">Gambar*</label>
                                     <input class="form-control <?php echo form_error('image') ? 'is-invalid':'' ?>"
-                                     type="text" name="image" min="0" placeholder="image" />
+                                     type="file" name="image" min="0" placeholder="image" />
                                     <div class="invalid-feedback">
                                         <?php echo form_error('image') ?>
                                     </div>
