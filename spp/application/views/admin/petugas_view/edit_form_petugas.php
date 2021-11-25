@@ -55,10 +55,10 @@
                                     <?php echo form_error('nama_petugas') ?>
                                 </div>
                             </div>
-                            <div class="form-group">
-                                
+                            <div class="form-group" style="display:none;">
+                                <label for="id_login">Id Login*</label>
                                 <input class="form-control <?php echo form_error('id_login') ? 'is-invalid':'' ?>"
-                                 type="hidden" name="id_login" min="0" value="<?php echo $petugas->id_login ?>" />
+                                 type="hidden" name="id_login" min="0" value="<?php echo $_SESSION['id_login']?>" />
                                 <div class="invalid-feedback">
                                     <?php echo form_error('id_login') ?>
                                 </div>
@@ -66,7 +66,7 @@
                             <div class="form-group">
                                 <label for="image">Image*</label>
                                 <input class="form-control <?php echo form_error('image') ? 'is-invalid':'' ?>"
-                                 type="text" name="image" min="0" value="<?php echo $petugas->image ?>" />
+                                 type="file" name="image" min="0" value="<?php echo $petugas->image ?>" />
                                 <div class="invalid-feedback">
                                     <?php echo form_error('image') ?>
                                 </div>

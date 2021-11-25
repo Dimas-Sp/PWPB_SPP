@@ -22,7 +22,8 @@ class Login extends CI_Controller{
 			$sesdata = array(
 				'username' => $username,
 				'level' => $level,
-				'logged_in' => TRUE
+				'logged_in' => TRUE,
+				'id_login' => $data['id_login'],
 			);
 			$this->session->set_userdata($sesdata);
 			if($level == 'admin'){

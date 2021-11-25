@@ -57,10 +57,10 @@
                                         <?php echo form_error('nama_petugas') ?>
                                     </div>
                                 </div>
-                                <div class="form-group">
+                                <div class="form-group" style="display:none;">
                                     <label for="id_login">ID Login*</label>
                                     <input class="form-control <?php echo form_error('id_login') ? 'is-invalid':'' ?>"
-                                     type="number" name="id_login" min="0" placeholder="id login" />
+                                     type="hidden" name="id_login" min="0" placeholder="id login" value ="<?php echo $_SESSION['id_login']?>"/>
                                     <div class="invalid-feedback">
                                         <?php echo form_error('id_login') ?>
                                     </div>
