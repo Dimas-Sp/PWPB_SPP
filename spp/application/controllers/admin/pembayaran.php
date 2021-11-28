@@ -7,9 +7,9 @@ class Pembayaran extends CI_Controller
     public function __construct()
     {
         parent::__construct();
-        $this->load->model("pembayaran_model");
+        $this->load->model(["pembayaran_model", "petugas_model", "spp_model", "siswa_model"]);
         $this->load->library('form_validation');
-        // $this->load->helper('rupiah_helper');
+        $this->load->helper('rupiah_helper');
     }
 
     public function index()
@@ -29,18 +29,22 @@ class Pembayaran extends CI_Controller
     {   
         if($this->session->userdata('akses')=='admin' || $this->session->userdata('akses')=='petugas'){
             
+            $data['id_spp'] = $this->spp_model->getAll();
+            $data['id_petugas'] = $this->petugas_model->getAll();
+            $data['nisn'] = $this->siswa_model->getSiswa();
             $pembayaran = $this->pembayaran_model;
             $validation = $this->form_validation;
             $validation->set_rules($pembayaran->rules());
-
+            
             if($validation->run()){
+                
                 $pembayaran->save();
                 $this->session->set_flashdata('success', 'Berhasil disimpan');
             }
             
             
 
-            $this->load->view("admin/pembayaran_view/new_form_pembayaran");
+            $this->load->view("admin/pembayaran_view/new_form_pembayaran", $data);
         }   
         else
         {
@@ -51,7 +55,10 @@ class Pembayaran extends CI_Controller
     public function edit($id = null)
     {
         if (!isset($id)) redirect('admin/pembayaran');
-       
+        
+        $data['id_spp'] = $this->spp_model->getAll();
+        $data['id_petugas'] = $this->petugas_model->getAll();
+        $data['nisn'] = $this->siswa_model->getSiswa();
         $pembayaran = $this->pembayaran_model;
         $validation = $this->form_validation;
         $validation->set_rules($pembayaran->rules());

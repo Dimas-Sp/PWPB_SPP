@@ -59,8 +59,8 @@
                                         <th>Kelas</th>
                                         <th>Alamat</th>
                                         <th>No Telepon</th>
-                                        
                                         <th>Tahun Ajaran</th>
+                                        <th>Foto</th>
                                         <th>Tools</th>
                                     </tr>
                                 </thead>
@@ -85,9 +85,11 @@
                                         <td>
                                             <?php echo ($isiswa->id_telp) ?>
                                         </td>
-                                        
                                         <td>
                                             <?php echo ($isiswa->tahun) ?>
+                                        </td>
+                                        <td>
+                                            <img src="<?php echo base_url('uploads/').$isiswa->image ?>" width="55" alt="...">
                                         </td>
                                         <td width="250">
                                             <a href="<?php echo site_url('admin/siswa/edit/'.$isiswa->nisn) ?>"

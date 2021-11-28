@@ -68,7 +68,7 @@
                                         </td>
                                         
                                         <td>
-                                            <img src="<?php echo base_url().'/uploads/'.$ipetugas->image ?>" width="55" alt="...">
+                                            <img src="<?php echo base_url().'uploads/'.$ipetugas->image ?>" width="55" alt="...">
                                             <!-- ($ipetugas->image) -->
                                         </td>
                                         <td width="250">

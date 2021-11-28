@@ -17,13 +17,11 @@ class Pembayaran_model extends CI_Model
     public function rules()
     {
         return [
-            ['field' => 'id_pembayaran',
-            'label' => 'Id_pembayaran',
+            ['field' => 'jumlah_bayar',
+            'label' => 'Jumlah_bayar',
             'rules' => 'required'],
 
-            ['field' => 'id_petugas',
-            'label' => 'Id_petugas',
-            'rules' => 'numeric'],
+           
             
             
         ];
@@ -32,7 +30,13 @@ class Pembayaran_model extends CI_Model
 
     public function getAll()
     {
-        return $this->db->get($this->_table)->result();
+        // return $this->db->get($this->_table)->result();
+        $this->db->select('pembayaran.*, petugas.id_petugas, petugas.nama_petugas, spp.id_spp, spp.nominal');
+        $this->db->from('pembayaran');
+        $this->db->join('petugas','pembayaran.id_petugas = petugas.id_petugas');
+        $this->db->join('spp','pembayaran.id_spp = spp.id_spp');
+        $query=$this->db->get();
+        return $query->result();
     }
     
     public function getById($id)
@@ -43,15 +47,15 @@ class Pembayaran_model extends CI_Model
     public function save()
     {
         $post = $this->input->post();
-        $this->id_pembayaran = $post["id_pembayaran"];
         $this->id_petugas = $post["id_petugas"];
         $this->nisn = $post["nisn"];
         $this->tgl_bayar = $post["tgl_bayar"];
-        $this->id_spp = $post["id_spp"];
-        $this->jumlah_bayar = $post["jumlah_bayar"];
         $this->bulan_dibayar = $post["bulan_dibayar"];
         $this->tahun_dibayar = $post["tahun_dibayar"];
+        $this->id_spp = $post["id_spp"];
+        $this->jumlah_bayar = $post["jumlah_bayar"];
         $this->db->insert($this->_table, $this);
+        
     }
 
     public function update()
@@ -70,6 +74,6 @@ class Pembayaran_model extends CI_Model
 
     public function delete($id)
     {
-        return $this->db->delete($this->_table, array("id_petugas" => $id));
+        return $this->db->delete($this->_table, array("id_pembayaran" => $id));
     }
 }

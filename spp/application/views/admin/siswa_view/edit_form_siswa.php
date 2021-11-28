@@ -89,10 +89,10 @@
                                     <?php echo form_error('id_telp') ?>
                                 </div>
                             </div>
-                            <div class="form-group">
+                            <div class="form-group" style="display:none;">
                                 <label for="id_login">ID Login*</label>
                                 <input class="form-control <?php echo form_error('id_login') ? 'is-invalid':'' ?>"
-                                 type="number" name="id_login" min="0" placeholder="id_login" value="<?php echo $siswa->id_login ?>" />
+                                 type="hidden" name="id_login" min="0" placeholder="id_login" value="<?php echo $_SESSION['id_login']?>" />
                                 <div class="invalid-feedback">
                                     <?php echo form_error('id_login') ?>
                                 </div>
@@ -106,6 +106,14 @@
                                             value="<?php echo $row->id_spp ?>"><?php echo $row->tahun?> </option>
                                             <?php } ?>
                                     </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="image">Image*</label>
+                                <input class="form-control <?php echo form_error('image') ? 'is-invalid':'' ?>"
+                                 type="file" name="image" min="0" value="<?php echo $siswa->image ?>" />
+                                <div class="invalid-feedback">
+                                    <?php echo form_error('image') ?>
+                                </div>
                             </div>
                             <input class="btn btn-success" type="submit" name="btn" value="Save" />
                             </form>

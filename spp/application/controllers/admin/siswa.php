@@ -35,6 +35,7 @@ class Siswa extends CI_Controller
             $validation->set_rules($siswa->rules());
 
             if ($validation->run()) {
+                
                 $siswa->save();
                 $this->session->set_flashdata('success', 'Berhasil disimpan');
             }

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 17, 2021 at 09:33 AM
+-- Generation Time: Nov 28, 2021 at 10:29 AM
 -- Server version: 10.4.11-MariaDB
 -- PHP Version: 7.4.3
 
@@ -101,6 +101,15 @@ CREATE TABLE `pembayaran` (
   `tahun_dibayar` varchar(4) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Dumping data for table `pembayaran`
+--
+
+INSERT INTO `pembayaran` (`id_pembayaran`, `id_petugas`, `nisn`, `tgl_bayar`, `id_spp`, `jumlah_bayar`, `bulan_dibayar`, `tahun_dibayar`) VALUES
+(1, 3, '0033871426', '2021-11-17', 1, 200000, 'November', '2021'),
+(2, 1, '003387122', '2021-11-03', 1, 200000, 'November', '2021'),
+(3, 3, '0033871423', '2021-11-03', 2, 300000, 'november', '2021');
+
 -- --------------------------------------------------------
 
 --
@@ -113,6 +122,14 @@ CREATE TABLE `petugas` (
   `id_login` int(11) NOT NULL,
   `image` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `petugas`
+--
+
+INSERT INTO `petugas` (`id_petugas`, `nama_petugas`, `id_login`, `image`) VALUES
+(1, 'Heruy', 1, '1638080145_UAKE.jpg'),
+(3, 'Gigi', 1, '1638091049_73cb71efe940641abaa963361cc36725course_certificate_eae5097eqhtdqx.png');
 
 -- --------------------------------------------------------
 
@@ -128,15 +145,20 @@ CREATE TABLE `siswa` (
   `alamat` text NOT NULL,
   `id_telp` varchar(13) NOT NULL,
   `id_login` int(11) NOT NULL,
-  `id_spp` int(11) NOT NULL
+  `id_spp` int(11) NOT NULL,
+  `image` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `siswa`
 --
 
-INSERT INTO `siswa` (`nisn`, `nis`, `nama`, `id_kelas`, `alamat`, `id_telp`, `id_login`, `id_spp`) VALUES
-('0033801279', '33801278', 'Dimas Sp', 1, 'JL. Pamoyanan', '08389911321', 1, 1);
+INSERT INTO `siswa` (`nisn`, `nis`, `nama`, `id_kelas`, `alamat`, `id_telp`, `id_login`, `id_spp`, `image`) VALUES
+('003387122', '3387122', 'Yuri', 1, 'Jl. Mana', '018237123', 1, 2, '1638083825_UAKE.jpg'),
+('0033871423', '33871423', 'Cyri', 1, 'Jl. Hanaraga', '0838765647', 1, 1, '1638082393_download.jpg'),
+('0033871424', '33871424', 'Tuti', 1, 'Jl. Manakah', '08388471273', 1, 2, '1638082447_download.jpg'),
+('0033871425', '33871425', 'Fuyu', 1, 'Jl. Malika', '0838765475', 2, 1, '1638082194_1637809883_data.png'),
+('0033871426', '33871426', 'Riri', 1, 'Jl. Kertamaya', '08382136812', 1, 2, '1638082111_1637811356_vara.jpeg');
 
 -- --------------------------------------------------------
 
@@ -239,13 +261,13 @@ ALTER TABLE `login`
 -- AUTO_INCREMENT for table `pembayaran`
 --
 ALTER TABLE `pembayaran`
-  MODIFY `id_pembayaran` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_pembayaran` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT for table `petugas`
 --
 ALTER TABLE `petugas`
-  MODIFY `id_petugas` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_petugas` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `spp`

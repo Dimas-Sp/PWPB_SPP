@@ -53,25 +53,23 @@
                             <table class="table table-hover" id="dataTable" width="100%" cellspacing="0">
                                 <thead>
                                     <tr>
-                                        <th>ID Pembayaran</th>
-                                        <th>ID Petugas</th>
-                                        <th>nisn</th>
-                                        <th>Tanggal Bayar</th>
-                                        <th>ID Spp</th>
-                                        <th>Jumlah Bayar</th>
-                                        <th>Bulan Dibayar</th>
-                                        <th>Tahun Dibayar</th>
+                                        
+                                        <th>Nama&nbsp;Petugas</th>
+                                        <th>Nisn</th>
+                                        <th>Tanggal&nbsp;Bayar</th>
+                                        <th>Bulan&nbsp;Dibayar</th>
+                                        <th>Tahun&nbsp;Dibayar</th>
+                                        <th>Nominal</th>
+                                        <th>Jumlah&nbsp;Bayar</th>
                                         <th>Tools</th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                     <?php foreach ($pembayaran as $ipembayaran): ?>
                                     <tr>
+                                        
                                         <td width="150">
-                                            <?php echo $ipembayaran->id_pembayaran ?>
-                                        </td>
-                                        <td>
-                                            <?php echo ($ipembayaran->id_petugas) ?>
+                                            <?php echo ($ipembayaran->nama_petugas) ?>
                                         </td>
                                         <td>
                                             <?php echo ($ipembayaran->nisn) ?>
@@ -80,16 +78,16 @@
                                             <?php echo ($ipembayaran->tgl_bayar) ?>
                                         </td>
                                         <td>
-                                            <?php echo ($ipembayaran->id_spp) ?>
-                                        </td>
-                                        <td>
-                                            <?php echo ($ipembayaran->jumlah_bayar) ?>
-                                        </td>
-                                        <td>
                                             <?php echo ($ipembayaran->bulan_dibayar) ?>
                                         </td>
                                         <td>
                                             <?php echo ($ipembayaran->tahun_dibayar) ?>
+                                        </td>
+                                        <td>
+                                            <?php echo rupiah($ipembayaran->nominal) ?>
+                                        </td>
+                                        <td>
+                                            <?php echo rupiah($ipembayaran->jumlah_bayar) ?>
                                         </td>
                                         <td width="250">
                                             <a href="<?php echo site_url('admin/pembayaran/edit/'.$ipembayaran->id_pembayaran) ?>"

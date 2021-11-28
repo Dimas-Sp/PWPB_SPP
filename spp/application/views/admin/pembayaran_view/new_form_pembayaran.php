@@ -41,29 +41,25 @@
                         </div>
                         <div class="card-body">
                             <form action="<?php base_url('admin/pembayaran/add') ?>" method="post" enctype="multipart/form-data" >
+                                
+                                
                                 <div class="form-group">
-                                    <label for="id_pembayaran">ID Pembayaran*</label>
-                                    <input class="form-control <?php echo form_error('id_pembayaran') ? 'is-invalid':'' ?>"
-                                     type="text" name="id_pembayaran" placeholder="id_pembayaran" />
-                                    <div class="invalid-feedback">
-                                        <?php echo form_error('id_pembayaran') ?>
-                                    </div>
+                                    <label for="id_petugas">Pilih Petugas*</label>
+                                    <select class="form-control" name="id_petugas" id="id_petugas">
+                                        <option value="">Pilih Petugas...</option>
+                                        <?php foreach($id_petugas as $row):?>
+                                            <option value="<?php echo $row->id_petugas;?>"><?php echo $row->nama_petugas;?></option>
+                                        <?php endforeach;?>
+                                    </select>
                                 </div>
                                 <div class="form-group">
-                                    <label for="id_petugas">ID Petugas*</label>
-                                    <input class="form-control <?php echo form_error('id_petugas') ? 'is-invalid':'' ?>"
-                                     type="number" name="id_petugas" min="0" placeholder="id_petugas" />
-                                    <div class="invalid-feedback">
-                                        <?php echo form_error('id_petugas') ?>
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    <label for="nisn">Nisn*</label>
-                                    <input class="form-control <?php echo form_error('nisn') ? 'is-invalid':'' ?>"
-                                     type="number" name="nisn" min="0" placeholder="nisn" />
-                                    <div class="invalid-feedback">
-                                        <?php echo form_error('nisn') ?>
-                                    </div>
+                                    <label for="nisn">Pilih Nisn*</label>
+                                    <select class="form-control" name="nisn" id="nisn">
+                                        <option value="">Pilih Nisn...</option>
+                                        <?php foreach($nisn as $row):?>
+                                            <option value="<?php echo $row->nisn;?>"><?php echo $row->nisn;?></option>
+                                        <?php endforeach;?>
+                                    </select>
                                 </div>
                                 <div class="form-group">
                                     <label for="tgl_bayar">Tanggal Bayar*</label>
@@ -74,25 +70,9 @@
                                     </div>
                                 </div>
                                 <div class="form-group">
-                                    <label for="id_spp">Id Spp*</label>
-                                    <input class="form-control <?php echo form_error('id_spp') ? 'is-invalid':'' ?>"
-                                     type="number" name="id_spp" min="0" placeholder="id_spp" />
-                                    <div class="invalid-feedback">
-                                        <?php echo form_error('id_spp') ?>
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    <label for="jumlah_bayar">Jumlah Bayar*</label>
-                                    <input class="form-control <?php echo form_error('jumlah_bayar') ? 'is-invalid':'' ?>"
-                                     type="number" name="jumlah_bayar" min="0" placeholder="jumlah_bayar" />
-                                    <div class="invalid-feedback">
-                                        <?php echo form_error('jumlah_bayar') ?>
-                                    </div>
-                                </div>
-                                <div class="form-group">
                                     <label for="bulan_dibayar">Bulan Dibayar*</label>
                                     <input class="form-control <?php echo form_error('bulan_dibayar') ? 'is-invalid':'' ?>"
-                                     type="text" name="bulan_dibayar" min="0" placeholder="bulan_dibayar" />
+                                     type="text" name="bulan_dibayar" min="0" placeholder="bulan dibayar" />
                                     <div class="invalid-feedback">
                                         <?php echo form_error('bulan_dibayar') ?>
                                     </div>
@@ -100,9 +80,26 @@
                                 <div class="form-group">
                                     <label for="tahun_dibayar">Tahun Dibayar*</label>
                                     <input class="form-control <?php echo form_error('tahun_dibayar') ? 'is-invalid':'' ?>"
-                                     type="number" name="tahun_dibayar" min="0" placeholder="tahun_dibayar" />
+                                     type="number" name="tahun_dibayar" min="0" placeholder="tahun dibayar" />
                                     <div class="invalid-feedback">
                                         <?php echo form_error('tahun_dibayar') ?>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="id_spp">Pilih Nominal*</label>
+                                    <select class="form-control" name="id_spp" id="id_spp">
+                                        <option value="">Pilih Nominal...</option>
+                                        <?php foreach($id_spp as $row):?>
+                                            <option value="<?php echo $row->id_spp;?>"><?php echo rupiah($row->nominal);?></option>
+                                        <?php endforeach;?>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label for="jumlah_bayar">Jumlah Bayar*</label>
+                                    <input class="form-control <?php echo form_error('jumlah_bayar') ? 'is-invalid':'' ?>"
+                                     type="number" name="jumlah_bayar" min="0" placeholder="jumlah bayar" />
+                                    <div class="invalid-feedback">
+                                        <?php echo form_error('jumlah_bayar') ?>
                                     </div>
                                 </div>
                                 <input class="btn btn-success" type="submit" name="btn" value="Simpan" />
@@ -135,3 +132,6 @@
 
 </html>
 
+
+                                
+                                

@@ -60,7 +60,7 @@
                                 <div class="form-group">
                                     <label for="nama">Nama*</label>
                                     <input class="form-control <?php echo form_error('nama') ? 'is-invalid':'' ?>"
-                                     type="text" name="nama" min="0" placeholder="nama" />
+                                     type="text" name="nama" min="0" placeholder="Nama" />
                                     <div class="invalid-feedback">
                                         <?php echo form_error('nama') ?>
                                     </div>
@@ -68,16 +68,16 @@
                                 <div class="form-group">
                                     <label for="kelas">Pilih Kelas*</label>
                                     <select class="form-control" name="id_kelas" id="id_kelas">
-                                        <option value="">Pilih Kelas</option>
+                                        <option value="">Pilih Kelas...</option>
                                         <?php foreach($id_kelas as $row):?>
                                             <option value="<?php echo $row->id_kelas;?>"><?php echo $row->nama_kelas;?></option>
                                         <?php endforeach;?>
                                     </select>
                                 </div>
                                 <div class="form-group">
-                                    <label for="alamat">alamat*</label>
+                                    <label for="alamat">Alamat*</label>
                                     <textarea class="form-control <?php echo form_error('alamat') ? 'is-invalid':'' ?>"
-                                     type="text" name="alamat" min="0" placeholder="alamat" ></textarea>
+                                     type="text" name="alamat" min="0" placeholder="contoh : Jl. Kertamaya" ></textarea>
                                     <div class="invalid-feedback">
                                         <?php echo form_error('alamat') ?>
                                     </div>
@@ -85,15 +85,15 @@
                                 <div class="form-group">
                                     <label for="id_telp">No Telepon*</label>
                                     <input class="form-control <?php echo form_error('id_telp') ? 'is-invalid':'' ?>"
-                                     type="number" name="id_telp" min="0" placeholder="id_telp" />
+                                     type="number" name="id_telp" min="0" placeholder="No Telepon" />
                                     <div class="invalid-feedback">
                                         <?php echo form_error('id_telp') ?>
                                     </div>
                                 </div>
-                                <div class="form-group">
+                                <div class="form-group" style="display:none;">
                                     <label for="id_login">ID Login*</label>
                                     <input class="form-control <?php echo form_error('id_login') ? 'is-invalid':'' ?>"
-                                     type="number" name="id_login" min="0" placeholder="1 | 2 | 3 " />
+                                     type="hidden" name="id_login" min="0" value="<?php echo $_SESSION['id_login']?>" />
                                     <div class="invalid-feedback">
                                         <?php echo form_error('id_login') ?>
                                     </div>
@@ -101,11 +101,19 @@
                                 <div class="form-group">
                                     <label for="id_spp">Pilih Tahun Ajaran*</label>
                                     <select class="form-control" name="id_spp" id="id_spp">
-                                        <option value="">Pilih Tahun Ajaran</option>
+                                        <option value="">Pilih Tahun Ajaran...</option>
                                         <?php foreach($id_spp as $row):?>
                                             <option value="<?php echo $row->id_spp;?>"><?php echo $row->tahun;?></option>
                                         <?php endforeach;?>
                                     </select>
+                                </div>
+                                <div class="form-group">
+                                    <label for="image">Foto*</label>
+                                    <input class="form-control <?php echo form_error('image') ? 'is-invalid':'' ?>"
+                                     type="file" name="image" min="0" placeholder="1 | 2 | 3 " />
+                                    <div class="invalid-feedback">
+                                        <?php echo form_error('image') ?>
+                                    </div>
                                 </div>
                                 <input class="btn btn-success" type="submit" name="btn" value="Simpan" />
                             </form>

@@ -46,22 +46,24 @@
                             enctype="multipart/form-data" >
 
                             <input type="hidden" name="id_pembayaran" value="<?php echo $pembayaran->id_pembayaran?>" />
-
                             <div class="form-group">
-                                <label for="id_petugas">ID Petugas*</label>
-                                <input class="form-control <?php echo form_error('id_petugas') ? 'is-invalid':'' ?>"
-                                 type="number" name="id_petugas" min="0" placeholder="id_petugas" value="<?php echo $pembayaran->id_petugas ?>" />
-                                <div class="invalid-feedback">
-                                    <?php echo form_error('id_petugas') ?>
-                                </div>
-                            </div>
+                                    <label for="id_petugas">Kelas*</label>
+                                    <select class="form-control" name="id_petugas" id="id_petugas" required>
+                                       <option value="">Pilih Kelas</option>
+                                            <?php foreach ($id_petugas as $row) { ?>
+                                        <option <?php if($row->id_petugas ==$pembayaran->id_petugas){ echo 'selected="selected"'; } ?> 
+                                            value="<?php echo $row->id_petugas ?>"><?php echo $row->nama_petugas?> </option>
+                                            <?php } ?>
+                                    </select>
                             <div class="form-group">
-                                <label for="nisn">Nisn*</label>
-                                <input class="form-control <?php echo form_error('nisn') ? 'is-invalid':'' ?>"
-                                 type="number" name="nisn" min="0" placeholder="nisn" value="<?php echo $pembayaran->nisn ?>" />
-                                <div class="invalid-feedback">
-                                    <?php echo form_error('nisn') ?>
-                                </div>
+                                    <label for="nisn">Nisn*</label>
+                                    <select class="form-control" name="nisn" id="nisn" required>
+                                       <option value="">Pilih Kelas</option>
+                                            <?php foreach ($nisn as $row) { ?>
+                                        <option <?php if($row->nisn ==$pembayaran->nisn){ echo 'selected="selected"'; } ?> 
+                                            value="<?php echo $row->nisn ?>"><?php echo $row->nisn?> </option>
+                                            <?php } ?>
+                                    </select>
                             </div>
                             <div class="form-group">
                                 <label for="tgl_bayar">Tanggal Bayar*</label>
@@ -69,22 +71,6 @@
                                  type="date" name="tgl_bayar" min="0" placeholder="tgl_bayar" value="<?php echo $pembayaran->tgl_bayar ?>" />
                                 <div class="invalid-feedback">
                                     <?php echo form_error('tgl_bayar') ?>
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <label for="id_spp">Id Spp*</label>
-                                <input class="form-control <?php echo form_error('id_spp') ? 'is-invalid':'' ?>"
-                                 type="number" name="id_spp" min="0" placeholder="id_spp" value="<?php echo $pembayaran->id_spp ?>" />
-                                <div class="invalid-feedback">
-                                    <?php echo form_error('id_spp') ?>
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <label for="jumlah_bayar">Jumlah Bayar*</label>
-                                <input class="form-control <?php echo form_error('jumlah_bayar') ? 'is-invalid':'' ?>"
-                                 type="number" name="jumlah_bayar" min="0" placeholder="jumlah_bayar" value="<?php echo $pembayaran->jumlah_bayar ?>" />
-                                <div class="invalid-feedback">
-                                    <?php echo form_error('jumlah_bayar') ?>
                                 </div>
                             </div>
                             <div class="form-group">
@@ -101,6 +87,24 @@
                                  type="number" name="tahun_dibayar" min="0" placeholder="tahun_dibayar" value="<?php echo $pembayaran->tahun_dibayar ?>" />
                                 <div class="invalid-feedback">
                                     <?php echo form_error('tahun_dibayar') ?>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                    <label for="id_spp">Nominal*</label>
+                                    <select class="form-control" name="id_spp" id="id_spp" required>
+                                       <option value="">Pilih Kelas</option>
+                                            <?php foreach ($id_spp as $row) { ?>
+                                        <option <?php if($row->id_spp ==$pembayaran->id_spp){ echo 'selected="selected"'; } ?> 
+                                            value="<?php echo $row->id_spp ?>"><?php echo rupiah($row->nominal)?> </option>
+                                            <?php } ?>
+                                    </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="jumlah_bayar">Jumlah Bayar*</label>
+                                <input class="form-control <?php echo form_error('jumlah_bayar') ? 'is-invalid':'' ?>"
+                                 type="number" name="jumlah_bayar" min="0" placeholder="jumlah_bayar" value="<?php echo $pembayaran->jumlah_bayar ?>" />
+                                <div class="invalid-feedback">
+                                    <?php echo form_error('jumlah_bayar') ?>
                                 </div>
                             </div>
                             <input class="btn btn-success" type="submit" name="btn" value="Save" />
