@@ -42,12 +42,12 @@
                     </div>
                     <div class="card-body">
 
-                        <form action="<?php base_url("admin/siswa/edit") ?>" method="post"
+                        <form action="<?php base_url("admin/siswa/edit") ?>" class="row g-3" method="post" style="width:122rem;"
                             enctype="multipart/form-data" >
 
                             <input type="hidden" name="nisn" value="<?php echo $siswa->nisn?>" />
 
-                            <div class="form-group">
+                            <div class="form-group col-md-2">
                                 <label for="nis">Nis*</label>
                                 <input class="form-control <?php echo form_error('nis') ? 'is-invalid':'' ?>"
                                  type="number" name="nis" min="0" placeholder="nis" value="<?php echo $siswa->nis ?>" />
@@ -55,7 +55,7 @@
                                     <?php echo form_error('nis') ?>
                                 </div>
                             </div>
-                            <div class="form-group">
+                            <div class="form-group col-md-4">
                                 <label for="nama">Nama*</label>
                                 <input class="form-control <?php echo form_error('nama') ? 'is-invalid':'' ?>"
                                  type="text" name="nama" min="0" placeholder="nama" value="<?php echo $siswa->nama ?>" />
@@ -63,7 +63,7 @@
                                     <?php echo form_error('nama') ?>
                                 </div>
                             </div>
-                            <div class="form-group">
+                            <div class="form-group col-md-4">
                                     <label for="spp">Pilih Kelas*</label>
                                     <select class="form-control" name="id_kelas" id="id_kelas" required>
                                        <option value="">Pilih Kelas</option>
@@ -73,7 +73,7 @@
                                             <?php } ?>
                                     </select>
                             </div>
-                            <div class="form-group">
+                            <div class="form-group col-md-4">
                                 <label for="alamat">Alamat*</label>
                                 <input class="form-control <?php echo form_error('alamat') ? 'is-invalid':'' ?>"
                                  type="text" name="alamat" min="0" placeholder="alamat" value="<?php echo $siswa->alamat ?>" />
@@ -81,7 +81,7 @@
                                     <?php echo form_error('alamat') ?>
                                 </div>
                             </div>
-                            <div class="form-group">
+                            <div class="form-group col-md-2">
                                 <label for="id_telp">No Telepon*</label>
                                 <input class="form-control <?php echo form_error('id_telp') ? 'is-invalid':'' ?>"
                                  type="number" name="id_telp" min="0" placeholder="id_telp" value="<?php echo $siswa->id_telp ?>" />
@@ -97,7 +97,7 @@
                                     <?php echo form_error('id_login') ?>
                                 </div>
                             </div>
-                            <div class="form-group">
+                            <div class="form-group col-md-4">
                                     <label for="spp">Pilih Tahun SPP*</label>
                                     <select class="form-control" name="id_spp" id="id_spp" required>
                                         <option value="">Pilih Tahun SPP</option>
@@ -107,15 +107,15 @@
                                             <?php } ?>
                                     </select>
                             </div>
-                            <div class="form-group">
+                            <div class="form-group col-md-4">
                                 <label for="image">Image*</label>
-                                <input class="form-control <?php echo form_error('image') ? 'is-invalid':'' ?>"
+                                <input class="form-control "
                                  type="file" name="image" min="0" value="<?php echo $siswa->image ?>" />
-                                <div class="invalid-feedback">
-                                    <?php echo form_error('image') ?>
-                                </div>
+
                             </div>
-                            <input class="btn btn-success" type="submit" name="btn" value="Save" />
+                                <div class="col-12">
+                                    <input class="btn btn-success" type="submit" name="btn" value="Save" />
+                                </div>
                             </form>
                         </div>
                         <div class="card-footer small text-muted">

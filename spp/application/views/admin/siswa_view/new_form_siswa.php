@@ -40,8 +40,8 @@
                             <a href="<?php echo site_url('admin/siswa/') ?>"><i class="fas fa-arrow-left"></i> Kembali</a>
                         </div>
                         <div class="card-body">
-                            <form action="<?php base_url('admin/siswa/add') ?>" method="post" enctype="multipart/form-data" >
-                                <div class="form-group">
+                            <form action="<?php base_url('admin/siswa/add') ?>" class="row g-3" method="post" enctype="multipart/form-data" >
+                                <div class="form-group col-md-6">
                                     <label for="nisn">Nisn*</label>
                                     <input class="form-control <?php echo form_error('nisn') ? 'is-invalid':'' ?>"
                                      type="text" name="nisn" placeholder="Nisn" />
@@ -49,7 +49,7 @@
                                         <?php echo form_error('nisn') ?>
                                     </div>
                                 </div>
-                                <div class="form-group">
+                                <div class="form-group col-md-6">
                                     <label for="nis">Nis*</label>
                                     <input class="form-control <?php echo form_error('nis') ? 'is-invalid':'' ?>"
                                      type="number" name="nis" min="0" placeholder="Nis" />
@@ -57,7 +57,7 @@
                                         <?php echo form_error('nis') ?>
                                     </div>
                                 </div>
-                                <div class="form-group">
+                                <div class="form-group col-md-6">
                                     <label for="nama">Nama*</label>
                                     <input class="form-control <?php echo form_error('nama') ? 'is-invalid':'' ?>"
                                      type="text" name="nama" min="0" placeholder="Nama" />
@@ -65,7 +65,7 @@
                                         <?php echo form_error('nama') ?>
                                     </div>
                                 </div>
-                                <div class="form-group">
+                                <div class="form-group col-md-2">
                                     <label for="kelas">Pilih Kelas*</label>
                                     <select class="form-control" name="id_kelas" id="id_kelas">
                                         <option value="">Pilih Kelas...</option>
@@ -74,7 +74,7 @@
                                         <?php endforeach;?>
                                     </select>
                                 </div>
-                                <div class="form-group">
+                                <div class="form-group col-md-4">
                                     <label for="alamat">Alamat*</label>
                                     <textarea class="form-control <?php echo form_error('alamat') ? 'is-invalid':'' ?>"
                                      type="text" name="alamat" min="0" placeholder="contoh : Jl. Kertamaya" ></textarea>
@@ -82,7 +82,7 @@
                                         <?php echo form_error('alamat') ?>
                                     </div>
                                 </div>
-                                <div class="form-group">
+                                <div class="form-group col-md-4">
                                     <label for="id_telp">No Telepon*</label>
                                     <input class="form-control <?php echo form_error('id_telp') ? 'is-invalid':'' ?>"
                                      type="number" name="id_telp" min="0" placeholder="No Telepon" />
@@ -98,7 +98,7 @@
                                         <?php echo form_error('id_login') ?>
                                     </div>
                                 </div>
-                                <div class="form-group">
+                                <div class="form-group col-md-4">
                                     <label for="id_spp">Pilih Tahun Ajaran*</label>
                                     <select class="form-control" name="id_spp" id="id_spp">
                                         <option value="">Pilih Tahun Ajaran...</option>
@@ -107,15 +107,14 @@
                                         <?php endforeach;?>
                                     </select>
                                 </div>
-                                <div class="form-group">
+                                <div class="form-group col-md-4">
                                     <label for="image">Foto*</label>
-                                    <input class="form-control <?php echo form_error('image') ? 'is-invalid':'' ?>"
+                                    <input class="form-control"
                                      type="file" name="image" min="0" placeholder="1 | 2 | 3 " />
-                                    <div class="invalid-feedback">
-                                        <?php echo form_error('image') ?>
-                                    </div>
                                 </div>
-                                <input class="btn btn-success" type="submit" name="btn" value="Simpan" />
+                                <div class="col-1">
+                                    <input class="btn btn-success col-12" type="submit" name="btn" value="Simpan" />
+                                </div>
                             </form>
                         </div>
                         <div class="card-footer small text-muted">

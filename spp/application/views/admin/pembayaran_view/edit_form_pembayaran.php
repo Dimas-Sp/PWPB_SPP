@@ -47,9 +47,9 @@
 
                             <input type="hidden" name="id_pembayaran" value="<?php echo $pembayaran->id_pembayaran?>" />
                             <div class="form-group">
-                                    <label for="id_petugas">Kelas*</label>
+                                    <label for="id_petugas">Petugas*</label>
                                     <select class="form-control" name="id_petugas" id="id_petugas" required>
-                                       <option value="">Pilih Kelas</option>
+                                       <option value="">Pilih petugas</option>
                                             <?php foreach ($id_petugas as $row) { ?>
                                         <option <?php if($row->id_petugas ==$pembayaran->id_petugas){ echo 'selected="selected"'; } ?> 
                                             value="<?php echo $row->id_petugas ?>"><?php echo $row->nama_petugas?> </option>
