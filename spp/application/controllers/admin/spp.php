@@ -27,6 +27,7 @@ class Spp extends CI_Controller
 
     public function add()
     {   
+        
         if($this->session->userdata('akses')=='admin' || $this->session->userdata('akses')=='petugas'){
             
             $spp = $this->spp_model;

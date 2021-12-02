@@ -41,6 +41,9 @@
                         </div>
                         <div class="card-body">
                             <form action="<?php base_url('admin/kelas/add') ?>" method="post" enctype="multipart/form-data" >
+                            <div class="form-group">
+                                <input type="hidden" name="id_kelas">
+                            </div>
                                 <div class="form-group">
                                     <label for="nama_kelas">Nama Kelas*</label>
                                     <input class="form-control <?php echo form_error('nama_kelas') ? 'is-invalid':'' ?>"

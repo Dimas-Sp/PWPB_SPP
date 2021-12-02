@@ -42,11 +42,11 @@
                     </div>
                     <div class="card-body">
 
-                        <form action="<?php base_url("admin/pembayaran/edit") ?>" method="post"
+                        <form action="<?php base_url("admin/pembayaran/edit") ?>" class="row g-3" method="post"
                             enctype="multipart/form-data" >
 
                             <input type="hidden" name="id_pembayaran" value="<?php echo $pembayaran->id_pembayaran?>" />
-                            <div class="form-group">
+                            <div class="form-group col-md-4">
                                     <label for="id_petugas">Petugas*</label>
                                     <select class="form-control" name="id_petugas" id="id_petugas" required>
                                        <option value="">Pilih petugas</option>
@@ -55,7 +55,8 @@
                                             value="<?php echo $row->id_petugas ?>"><?php echo $row->nama_petugas?> </option>
                                             <?php } ?>
                                     </select>
-                            <div class="form-group">
+                            </div>
+                            <div class="form-group col-md-4">
                                     <label for="nisn">Nisn*</label>
                                     <select class="form-control" name="nisn" id="nisn" required>
                                        <option value="">Pilih Kelas</option>
@@ -65,7 +66,7 @@
                                             <?php } ?>
                                     </select>
                             </div>
-                            <div class="form-group">
+                            <div class="form-group col-md-4">
                                 <label for="tgl_bayar">Tanggal Bayar*</label>
                                 <input class="form-control <?php echo form_error('tgl_bayar') ? 'is-invalid':'' ?>"
                                  type="date" name="tgl_bayar" min="0" placeholder="tgl_bayar" value="<?php echo $pembayaran->tgl_bayar ?>" />
@@ -73,7 +74,7 @@
                                     <?php echo form_error('tgl_bayar') ?>
                                 </div>
                             </div>
-                            <div class="form-group">
+                            <div class="form-group col-md-6">
                                 <label for="bulan_dibayar">Bulan Dibayar*</label>
                                 <input class="form-control <?php echo form_error('bulan_dibayar') ? 'is-invalid':'' ?>"
                                  type="text" name="bulan_dibayar" min="0" placeholder="bulan_dibayar" value="<?php echo $pembayaran->bulan_dibayar ?>" />
@@ -81,7 +82,7 @@
                                     <?php echo form_error('bulan_dibayar') ?>
                                 </div>
                             </div>
-                            <div class="form-group">
+                            <div class="form-group col-md-6">
                                 <label for="tahun_dibayar">Tahun Dibayar*</label>
                                 <input class="form-control <?php echo form_error('tahun_dibayar') ? 'is-invalid':'' ?>"
                                  type="number" name="tahun_dibayar" min="0" placeholder="tahun_dibayar" value="<?php echo $pembayaran->tahun_dibayar ?>" />
@@ -89,7 +90,7 @@
                                     <?php echo form_error('tahun_dibayar') ?>
                                 </div>
                             </div>
-                            <div class="form-group">
+                            <div class="form-group col-md-6">
                                     <label for="id_spp">Nominal*</label>
                                     <select class="form-control" name="id_spp" id="id_spp" required>
                                        <option value="">Pilih Kelas</option>
@@ -99,7 +100,7 @@
                                             <?php } ?>
                                     </select>
                             </div>
-                            <div class="form-group">
+                            <div class="form-group col-md-6">
                                 <label for="jumlah_bayar">Jumlah Bayar*</label>
                                 <input class="form-control <?php echo form_error('jumlah_bayar') ? 'is-invalid':'' ?>"
                                  type="number" name="jumlah_bayar" min="0" placeholder="jumlah_bayar" value="<?php echo $pembayaran->jumlah_bayar ?>" />

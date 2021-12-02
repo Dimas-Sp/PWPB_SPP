@@ -40,10 +40,10 @@
                             <a href="<?php echo site_url('admin/pembayaran/') ?>"><i class="fas fa-arrow-left"></i> Kembali</a>
                         </div>
                         <div class="card-body">
-                            <form action="<?php base_url('admin/pembayaran/add') ?>" class="row g-3" style="width:136rem;" method="post" enctype="multipart/form-data" >
+                            <form action="<?php base_url('admin/pembayaran/add') ?>" class="row g-3" method="post" enctype="multipart/form-data" >
                                 
                                 
-                                <div class="form-group col-md-3">
+                                <div class="form-group col-md-5">
                                     <label for="id_petugas">Pilih Petugas*</label>
                                     <select class="form-control" name="id_petugas" id="id_petugas">
                                         <option value="">Pilih Petugas...</option>
@@ -52,7 +52,7 @@
                                         <?php endforeach;?>
                                     </select>
                                 </div>
-                                <div class="form-group col-md-2">
+                                <div class="form-group col-md-3">
                                     <label for="nisn">Pilih Nisn*</label>
                                     <select class="form-control" name="nisn" id="nisn">
                                         <option value="">Pilih Nisn...</option>
@@ -94,7 +94,7 @@
                                         <?php endforeach;?>
                                     </select>
                                 </div>
-                                <div class="form-group col-md-6">
+                                <div class="form-group col-md-4">
                                     <label for="jumlah_bayar">Jumlah Bayar*</label>
                                     <input class="form-control <?php echo form_error('jumlah_bayar') ? 'is-invalid':'' ?>"
                                      type="number" name="jumlah_bayar" min="0" placeholder="jumlah bayar" />

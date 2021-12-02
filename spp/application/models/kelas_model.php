@@ -43,7 +43,7 @@ class Kelas_model extends CI_Model
     public function save()
     {
         $post = $this->input->post();
-        $this->id_kelas = uniqid();
+        $this->id_kelas = $post["id_kelas"];
         $this->nama_kelas = $post["nama_kelas"];
         $this->id_kk = $post["id_kk"];
         $this->db->insert($this->_table, $this);
@@ -52,7 +52,7 @@ class Kelas_model extends CI_Model
     public function update()
     {
         $post = $this->input->post();
-        $this->id_kelas = $post["id"];
+        $this->id_kelas = $post["id_kelas"];
         $this->nama_kelas = $post["nama_kelas"];
         $this->id_kk = $post["id_kk"];
         $this->db->update($this->_table, $this, array('id_kelas' => $post['id']));
