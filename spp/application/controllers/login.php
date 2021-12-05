@@ -22,20 +22,21 @@ class Login extends CI_Controller{
 			$sesdata = array(
 				'username' => $username,
 				'level' => $level,
-				'logged_in' => TRUE
+				'logged_in' => TRUE,
+				'id_login' => $data['id_login'],
 			);
 			$this->session->set_userdata($sesdata);
-			if($level = 'admin'){
+			if($level == 'admin'){
 				$this->session->set_userdata('akses', 'admin');
 				redirect('admin/overview');
-			}elseif($level = 'petugas'){
+			}elseif($level == 'petugas'){
 				$this->session->set_userdata('akses', 'petugas');
 				redirect('admin/pembayaran');
-			}elseif($level = 'siswa'){
+			}elseif($level == 'siswa'){
 				$this->session->set_userdata('akses', 'siswa');
 				redirect('admin/pembayaran');
 			}else{
-				$this->session->$this->session->set_flashdata('msg', 'Username or Password is Wrong');
+				$this->session->set_flashdata('msg', 'Username or Password is Wrong');
 				redirect('login');
 				
 			}
